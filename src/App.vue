@@ -21,18 +21,27 @@
         <span>Home</span>
       </el-menu-item>
 
-      <el-menu-item 
+      <el-submenu 
         index='2' 
         :route="{ path: '/projects' }"
       >
-        <i class="el-icon-cpu" style="color:#ff7ab2"></i>
-        <span>Projects</span>
-      </el-menu-item>
+        <template slot="title">
+          <i class="el-icon-cpu" style="color:#ff7ab2"></i>
+          <span>Projects</span>
+        </template>
+        <el-menu-item index="2-1" :route="{ path: '/iosGame' }">
+          IOS Game
+        </el-menu-item>
+        <el-menu-item index="2-1" :route="{ path: '/simpleMetronome' }">
+          Simple Metronome
+        </el-menu-item>
+      </el-submenu>
 
-      <el-menu-item 
-        index='3' 
-        :route="{ path: '/contact' }"
-      >
+      <el-menu-item index='3' :route="{ path: '/resume' }">
+        <i class="el-icon-s-promotion" style="color:#ff7ab2"></i>
+        <span>Resume</span>
+      </el-menu-item>
+      <el-menu-item index='4' :route="{ path: '/contact' }">
         <i class="el-icon-s-promotion" style="color:#ff7ab2"></i>
         <span>Contact</span>
       </el-menu-item>

@@ -1,5 +1,5 @@
 <template>
-    <b-container style="alignContent:center; justifyContent:center; marginTop:40px">
+    <b-container style="alignContent:center; justifyContent:center; marginTop:40px; marginBottom:100px">
         <b-row>
             <b-col>
                 <h1>Home</h1>    
@@ -7,9 +7,13 @@
         </b-row>
         <b-row>
             <b-col>
-                <el-carousel trigger="click" height="250px">
-                    <el-carousel-item v-for="item in 4" :key="item">
-                        <h3 class="small">{{ item }}</h3>
+                <el-carousel trigger="click" height="350px">
+                    <el-carousel-item v-for="(item, key, index) in items" :key="key">
+                        <el-image
+                            style="width: 100%; height: 100%"
+                            :src="item.img"
+                            :fit="none"
+                        />
                     </el-carousel-item>
                 </el-carousel>
             </b-col>
@@ -20,7 +24,15 @@
 <script>
 import { scrypt } from 'crypto';
 export default {
-    name: "Home"
+    name: "Home",
+    data() {
+        return {
+            items: [
+                { img: require('../assets/1.png') },
+                { img: require('../assets/2.png') },
+            ]
+        }
+    }
 }
 </script>
 
@@ -29,7 +41,7 @@ export default {
     color: #475669;
     font-size: 14px;
     opacity: 0.75;
-    line-height: 250px;
+    line-height: 350px;
     margin: 0;
   }
 
