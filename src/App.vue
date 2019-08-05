@@ -1,28 +1,88 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app" style="marginTop:0; backgroundColor:#2a2a30">
+    <h1 style="marginTop:20px; marginBottom:0px; padding:0px; color:#acf2e4">JoGa Software</h1>
+    <el-menu 
+      :default-active="activeIndex" 
+      class="el-menu-demo" 
+      mode='horizontal' 
+      @select="handleSelect"
+      background-color="#2a2a30"
+      text-color="#ff7ab2"
+      active-text-color="#68dafa"
+      style="borderColor:#d9c97c"
+      router
+    >
+      <el-menu-item 
+        index='1' 
+        :route="{ path: '/' }"
+        
+      >
+        <i class="el-icon-s-home" style="color:#ff7ab2"></i>
+        <span>Home</span>
+      </el-menu-item>
+
+      <el-menu-item 
+        index='2' 
+        :route="{ path: '/projects' }"
+      >
+        <i class="el-icon-cpu" style="color:#ff7ab2"></i>
+        <span>Projects</span>
+      </el-menu-item>
+
+      <el-menu-item 
+        index='3' 
+        :route="{ path: '/contact' }"
+      >
+        <i class="el-icon-s-promotion" style="color:#ff7ab2"></i>
+        <span>Contact</span>
+      </el-menu-item>
+    </el-menu>
+    <div style="flex:1; flexGrow:1">
+      <router-view/>
+    </div>
+    <footer style="position:fixed; bottom:0; alignItems:center; justifyContent:center; width:100%">
+      <h5 style="fontSize:10px; color:#7d8a96">JoGa Software © 2019</h5>
+    </footer>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+  },
+  data() {
+    return {
+      activeIndex: '1'
+    }
+  },
+  methods: {
+    handleSelect(key, keypath) {
+      console.log(key, keypath)
+    }
   }
 }
 </script>
 
 <style>
+
+body, html {
+  background-color: #2a2a30
+}
+
+@font-face {
+  font-family: "Minercraftory";
+  src: url("./assets/Minercraftory.ttf");
+  font-size: 12
+}
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Minercraftory';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #e27466;
   margin-top: 60px;
+  /* background-color: #fff */
 }
 </style>
