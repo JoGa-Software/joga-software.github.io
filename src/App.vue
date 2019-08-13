@@ -1,6 +1,6 @@
 <template>
-  <div id="app" style="marginTop:0; backgroundColor:#2a2a30">
-    <h1 style="marginTop:20px; marginBottom:0px; padding:0px; color:#acf2e4">JoGa Software</h1>
+  <div id="app">
+    <h1 style="paddingTop:40px; marginBottom:0px; color:#acf2e4; backgroundColor:#2a2a30">JoGa Software</h1>
     <el-menu 
       :default-active="activeIndex" 
       class="el-menu-demo" 
@@ -9,7 +9,7 @@
       background-color="#2a2a30"
       text-color="#ff7ab2"
       active-text-color="#68dafa"
-      style="borderColor:#d9c97c"
+      style="borderColor:black; borderWidth:2px"
       router
     >
       <el-menu-item 
@@ -46,12 +46,10 @@
         <span>Contact</span>
       </el-menu-item>
     </el-menu>
-    <div style="flex:1; flexGrow:1">
+    <div id="contentContainer">
       <router-view/>
     </div>
-    <footer style="position:fixed; bottom:0; alignItems:center; justifyContent:center; width:100%">
-      <h5 style="fontSize:10px; color:#7d8a96">JoGa Software © 2019</h5>
-    </footer>
+    <h5 style="position: fixed; width:100%; bottom: 0px; fontSize:10px; color:#7d8a96">JoGa Software © 2019</h5>
   </div>
 </template>
 
@@ -76,22 +74,25 @@ export default {
 
 <style>
 
-body, html {
-  background-color: #2a2a30
-}
+  @font-face {
+    font-family: "Minercraftory";
+    src: url("./assets/Minercraftory.ttf");
+    font-size: 12
+  }
 
-@font-face {
-  font-family: "Minercraftory";
-  src: url("./assets/Minercraftory.ttf");
-  font-size: 12
-}
-#app {
-  font-family: 'Minercraftory';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #e27466;
-  margin-top: 60px;
-  /* background-color: #fff */
-}
+  #app {
+    font-family: 'Minercraftory';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #e27466;
+    height: '100%';
+  }
+
+  #contentContainer {
+    width: 100%;
+    height: 100%;
+    background-color: transparent
+  }
+
 </style>

@@ -79,6 +79,10 @@ export default {
 
             //display the email client
             window.location.href = link
+
+            //clear out the fields 
+            this.bodyText = ""
+            this.subjectText = ""
         }
     }
 }

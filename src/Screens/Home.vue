@@ -1,24 +1,18 @@
 <template>
-    <b-container style="alignContent:center; justifyContent:center; marginTop:40px; marginBottom:100px">
-        <b-row>
-            <b-col>
-                <h1>Home</h1>    
-            </b-col>
+    <div id="homeContainer">
+        <h1>Home</h1>    
+        <b-row style="justifyContent:center; alignItems:center; width: 100%;">
+            <el-carousel trigger="click" @click="clicked" style="width:70%">
+                <el-carousel-item v-for="(item, key, index) in items" :key="key">
+                    <el-image
+                        style="width: 100%; height: 100%"
+                        :src="item.img"
+                        fit="contain"
+                    />
+                </el-carousel-item>
+            </el-carousel>
         </b-row>
-        <b-row>
-            <b-col>
-                <el-carousel trigger="click" height="350px">
-                    <el-carousel-item v-for="(item, key, index) in items" :key="key">
-                        <el-image
-                            style="width: 100%; height: 100%"
-                            :src="item.img"
-                            :fit="none"
-                        />
-                    </el-carousel-item>
-                </el-carousel>
-            </b-col>
-        </b-row>
-    </b-container>
+    </div>
 </template>
 
 <script>
@@ -32,6 +26,11 @@ export default {
                 { img: require('../assets/2.png') },
             ]
         }
+    },
+    methods: {
+        clicked() {
+            console.log("got clicked")
+        }
     }
 }
 </script>
@@ -41,15 +40,14 @@ export default {
     color: #475669;
     font-size: 14px;
     opacity: 0.75;
-    line-height: 350px;
     margin: 0;
   }
 
-  .el-carousel__item:nth-child(2n) {
-    background-color: #99a9bf;
-  }
 
-  .el-carousel__item:nth-child(2n+1) {
-    background-color: #d3dce6;
+  #homeContainer {
+    height: 100%;
+    align-items: center;
+    justify-content: center; 
+    padding-top: 10px
   }
 </style>
