@@ -35,6 +35,12 @@
         <el-menu-item index="/simpleMetronome" :route="{ path: '/simpleMetronome' }">
           Simple Metronome
         </el-menu-item>
+        <el-menu-item index="/tofuFighter" :route="{ path: '/tofuFighter' }">
+          Tofu Fighter
+        </el-menu-item>
+        <el-menu-item index="/tetris" :route="{ path: '/tetris' }">
+          Tetris
+        </el-menu-item>
       </el-submenu>
 
       <el-menu-item index='/resume' :route="{ path: '/resume' }">

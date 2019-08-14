@@ -49,6 +49,8 @@ export default {
             items: [
                 { img: require('../assets/1.png'), route:"iosGame", caption: "2D Platformer", text: "- currently in development -" },
                 { img: require('../assets/2.png'), route:"simpleMetronome" },
+                { img: require('../assets/3.png'), route:"tofuFighter", caption: "Tofu Fighter", text: "Join the fight to decide who will be the last Tofu standing" },
+                { img: require('../assets/4.png'), route:"tetris", caption: "A Simple Tetris Clone", text: "Built using the JavaGameEngine by JoGa" },
             ]
         }
     },
