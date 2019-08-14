@@ -60,14 +60,14 @@ export default {
                 const h = this.$createElement;
                 this.$notify({
                     title: 'Oops!',
-                    message: h('i', { style: 'color: #ff7ab2;'}, 'Subject cannot be blank')
+                    message: h('i', { style: 'color: #000;'}, 'Subject cannot be blank')
                 });
                 return
             }else if (this.bodyText.length == 0) {
                 const h = this.$createElement;
                 this.$notify({
                     title: 'Oops!',
-                    message: h('i', { style: 'color: #ff7ab2' }, 'Body cannot be blank')
+                    message: h('i', { style: 'color: #000' }, 'Body cannot be blank')
                 });
                 return
             }
