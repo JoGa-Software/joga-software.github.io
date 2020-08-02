@@ -1,34 +1,35 @@
 <template>    
-    <div id="smContentContainer">
-        <div style="display: flex; flexDirection: column; alignItems:center; backgroundColor:rgba(0,0,0,0.7); width:100%; height:500px">
-            <img
-                style="position: absolute; left: 0px; zIndex: -10; width: 100%; height: 500px"
-                :src="bgImg"
-                fit="cover"
-            />
-            <div style="width:100%; paddingLeft:2%; marginTop: 1%;">
-                <p align="left"><font color="white" size="5">Tofu Fighter</font></p>
-            </div>
-            <div style="width:80%; height:75%; display:flex; flexDirection:row; alignItems:center; justifyContent:center;">
-                <img 
-                    style="width:auto; height:100%; fit:scale-down"
+    <div>
+        <b-col align-h="center" style="backgroundColor:#fafafa; paddingBottom:10px">
+            <b-row align-h="start">
+                <font color="#111111" style="paddingLeft:20px;paddingTop:20px">Tofu Fighter</font>
+            </b-row>
+            <b-row align-h="center" style="marginTop:50px">
+                <h2><font color="#232020">A Web Based First Person Shooter</font></h2>
+            </b-row>
+            <b-row align-h="center">
+                <b-img
+                    block 
+                    fluid
+                    style="max-width:230px; max-height:300px; width: auto; height: auto;"
                     :src="sm1"
                 />
-                <div style="paddingLeft:5%">
-                    <font color="white" size="7">A Web Based First Person Shooter</font>
-                    <br/>
-                    <font color="white" size="3">Play with friends and find out who is the king of tofu.</font>
-                    <br/>
-                    <br/>
+            </b-row>
+            <b-row align-h="center" style="marginTop:20px">
+                <b-container>
+                    <font color="#232020">Play with friends and find out who is the king of tofu.</font>
+                </b-container>
+            </b-row>
+            <b-row align-h="center" style="marginTop:20px">
+                <b-container>
                     <el-button @click="onAppStoreClicked">Play Now</el-button>
-                </div>
-            </div>
-        </div>
-    </div>    
+                </b-container>
+            </b-row>                        
+        </b-col>
+    </div> 
 </template>
 
 <script>
-import { scrypt } from 'crypto';
 export default {
     name: "TofuFighter",
     data() {
@@ -46,7 +47,7 @@ export default {
     },
     methods: {
         onAppStoreClicked() {
-            window.location.href = "http://cryptic-earth-45262.herokuapp.com/"
+            window.location.href = "http://tofufighter.herokuapp.com/"
         },
         ssClicked() {
             console.log("screenshipt clicked")

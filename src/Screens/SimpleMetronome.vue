@@ -1,72 +1,90 @@
 <template>    
-    <div id="smContentContainer">
-        <div style="display: flex; flexDirection: column; alignItems:center; backgroundColor:rgba(0,0,0,0.7); width:100%; height:500px">
-            <img
-                style="position: absolute; left: 0px; zIndex: -10; width: 100%; height: 500px"
-                :src="bgImg"
-                fit="cover"
-            />
-            <div style="width:100%; paddingLeft:2%; marginTop: 1%;">
-                <p align="left"><font color="white" size="5">Simple Metronome by JoGa</font></p>
-            </div>
-            <div style="width:80%; height:75%; display:flex; flexDirection:row; alignItems:center; justifyContent:center;">
-                <img 
-                    style="width:auto; height:100%; fit:scale-down"
+    <div>
+        <b-col align-h="center" style="backgroundColor:#fafafa; paddingBottom:10px">
+            <b-row align-h="start">
+                <font color="#111111" style="paddingLeft:20px;paddingTop:20px">Simple Metronome by JoGa</font>
+            </b-row>
+            <b-row align-h="center" style="marginTop:50px">
+                <h2><font color="#232020">Simple, Yet Powerful</font></h2>
+            </b-row>
+            <b-row align-h="center" style="marginTop:10px">
+                <font color="#111111">Simple Metronome is an easy to use free metronome app minus the clutter.</font>
+            </b-row>
+            <b-row align-h="center" style="marginTop:20px">
+                <b-img
+                    block 
+                    fluid
+                    style="max-width:330px; max-height:300px; width: auto; height: auto;"
                     :src="sm1"
                 />
-                <div style="paddingLeft:5%">
-                    <font color="white" size="7">Simple, Yet Powerful</font>
-                    <br/>
-                    <font color="white" size="3">Simple Metronome is an easy to use free metronome app minus the clutter.</font>
-                    <br/>
+            </b-row>
+            <b-row align-h="center" style="marginTop:20px;">
+                <b-container>
                     <img
                         class="zoomButton"
-                        style="width:30%; height:auto; fit:scale-down; cursor: pointer; paddingTop:5%"
+                        style="max-width:130px; max-height:100px; width: auto; height: auto; cursor: pointer;"
                         :src="onAppStoreImg"
                         @click="onAppStoreClicked"
                     />
-                </div>
-            </div>
-        </div>
-        <div style="display: flex; flexDirection: column; alignItems:center; justifyContent:center; backgroundColor:white; width:100%; height:700px">
-            <div style="width:80%; height:80%; display:flex; flexDirection:row; alignItems:center; justifyContent:center;">
-                <img 
-                    style="width:auto; height:100%; fit:scale-down"
-                    :src="sm2"
-                />
-                <div style="paddingLeft:10%; width: 50%; textAlign:left;">
-                    <font color="black" size="7">Powerful Features</font>
-                    <br/>
-                    <font color="black" size="3">Simple Metronome Provides professional level features packed in an easy to use user interface.</font>
-                    <br/>
-                    <ul style="paddingTop:5%; color:black">
-                        <li><font color="black" size="3">Time Signature and Subdivision adjustments</font></li>
-                        <li><font color="black" size="3">Sound Selection</font></li>
-                        <li><font color="black" size="3">Tap for tempo</font></li>
-                        <li><font color="black" size="3">Beat Accentor and Visualizer</font></li>
-                        <li><font color="black" size="3">and more...</font></li>
-                    </ul>
-                    <el-button @click="onAppStoreClicked">Download Now</el-button>
-                </div>
-            </div>
-        </div>
-        <div style="display: flex; flexDirection: column; alignItems:center;backgroundColor:#f4f4f4; width:100%; height:auto; paddingTop:2%; paddingBottom:2%">
-            <font color="black" size="7">Screenshots</font>
-            <el-carousel trigger="click" style="width:70%; paddingTop:3%;backgroundColor:rgba(0,0,0,0)" type="card">
-                <el-carousel-item v-for="(item, key) in items" :key="key" style=" backgroundColor:rgba(0,0,0,0)">
-                    <el-image
-                        style="width: 100%; height: 100%;backgroundColor:rgba(0,0,0,0)"
-                        :src="item.img"
-                        fit="contain"
-                    />
-                </el-carousel-item>
-            </el-carousel>
-        </div>
+                </b-container>
+            </b-row>                        
+        </b-col>
+
+        <b-col align-h="center" style="backgroundColor:#fafafa;marginTop:20px;paddingTop:10px;paddingBottom:10px">
+            <b-row align-h="center">
+                <h3><font color="#232020">Powerful Features</font></h3>
+            </b-row>
+            <b-row align-h="center">
+                <font color="#111111">Simple Metronome Provides professional level features packed in an easy to use user interface.</font>
+            </b-row>
+            <b-row align-h="center" align-v="center" style="paddingTop:10px">
+                <b-col align-v="center">
+                    <b-row align-h="end">
+                        <b-img
+                            block 
+                            fluid
+                            style="max-width:330px; max-height:300px; width: auto; height: auto;"
+                            :src="sm2"
+                        />
+                    </b-row>
+                </b-col>
+                <b-col align-v="center">
+                    <b-row align-h="start">
+                        <ul style="paddingTop:10px; color:black;textAlign:left">
+                            <li><font color="#111111">Time Signature and Subdivision adjustments</font></li>
+                            <li><font color="#111111">Sound Selection</font></li>
+                            <li><font color="#111111">Tap for tempo</font></li>
+                            <li><font color="#111111">Beat Accentor and Visualizer</font></li>
+                            <li><font color="#111111">and more...</font></li>
+                        </ul>
+                    </b-row>
+                </b-col>
+            </b-row>
+            <b-row align-h="center" style="paddingTop:10px">
+                <el-button @click="onAppStoreClicked">Download Now</el-button>
+            </b-row>
+        </b-col>
+
+        <b-col align-h="center" style="backgroundColor:#fafafa;marginTop:20px;">
+            <b-row align-h="center">
+                <font color="#111111" size="7">Screenshots</font>
+            </b-row>
+            <b-row align-h="center">
+                <el-carousel trigger="click" style="width:70%; paddingTop:3%;backgroundColor:rgba(0,0,0,0)" type="card">
+                    <el-carousel-item v-for="(item, key) in items" :key="key" style=" backgroundColor:rgba(0,0,0,0)">
+                        <el-image
+                            style="width: 100%; height: 100%;backgroundColor:rgba(0,0,0,0)"
+                            :src="item.img"
+                            fit="contain"
+                        />
+                    </el-carousel-item>
+                </el-carousel>
+            </b-row>
+        </b-col>
     </div>    
 </template>
 
 <script>
-import { scrypt } from 'crypto';
 export default {
     name: "Projects",
     data() {
@@ -101,15 +119,6 @@ export default {
 
     .zoomButton:hover {
         transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-    }
-
-    #smContentContainer {
-        display: flex;
-        flex: 1;
-        flex-direction: column;
-        width: 100%;
-        height: 100%;
-        /* font-family: Helvetica */
     }
 
 </style>

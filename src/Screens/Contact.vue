@@ -1,49 +1,44 @@
 <template>  
-    <b-container style="alignContent:center; justifyContent:center; marginTop:40px">
-        <b-row style="alignItems:center; justifyContent:center; margin: 10px;">
-            <b-col class="col-md-1"/>
-            <b-col class="col-md-5">
-                <h3>Email Me</h3>
-            </b-col>
-        </b-row> 
-        <b-row style="alignItems:center; justifyContent:center; margin: 10px;">
-            <b-col class="col-md-1" style="textAlign:center; fontSize:12px">
-                Subject:
-            </b-col>
-            <b-col class="col-md-5">
-                <el-input clearable placeholder="email subject" v-model="subjectText"></el-input>
-            </b-col>
-        </b-row>  
-        <b-row style="alignItems:center; justifyContent:center; margin: 10px;">
-            <b-col class="col-md-1" style="textAlign:center; fontSize:12px">
-                Body:
-            </b-col>
-            <b-col class="col-md-5">
-                <el-input 
-                    type="textarea"
-                    :autosize="{ minRows: 6, maxRows: 20}"
-                    placeholder="email body" 
-                    v-model="bodyText"
-                >
-                </el-input>
-            </b-col>
-        </b-row>  
-        <b-row style="alignItems:center; justifyContent:center; margin: 10px;">
-            <b-col class="col-md-1"/>
-            <b-col class="col-md-5">
-                <el-button 
-                    type="primary"
-                    style="margin:10px; width:90%"
-                    @click="sendPressed"
-                >
-                    Send
-                </el-button>
-            </b-col>
-        </b-row>  
-    </b-container>
+    <div>
+        <b-col align-h="center" align-v="center" style="paddingTop:20px; paddingBottom:20px">
+            <b-row align-v="center" align-h="center" style="margin: 10px;">
+                <b-col class="col-sm-5">
+                    <h3>Email Me</h3>
+                </b-col>
+            </b-row> 
+            <b-row align-v="center" align-h="center" style="margin: 10px;">
+                <b-col class="col-sm-5">
+                    <el-input clearable placeholder="email subject" v-model="subjectText"></el-input>
+                </b-col>
+            </b-row>  
+            <b-row align-v="center" align-h="center" style="margin: 10px;">
+                <b-col class="col-sm-5">
+                    <el-input 
+                        type="textarea"
+                        :autosize="{ minRows: 6, maxRows: 20}"
+                        placeholder="email body" 
+                        v-model="bodyText"
+                    >
+                    </el-input>
+                </b-col>
+            </b-row>  
+            <b-row align-v="center" align-h="center" style="margin: 10px;">
+                <b-col class="col-sm-5">
+                    <el-button 
+                        type="primary"
+                        style="margin:10px; width:90%"
+                        @click="sendPressed"
+                    >
+                        Send
+                    </el-button>
+                </b-col>
+            </b-row>  
+        </b-col>
+    </div>
 </template>
 
 <script>
+
 export default {
     name: "Contact",
     data() {

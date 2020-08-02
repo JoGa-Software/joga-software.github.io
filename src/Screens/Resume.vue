@@ -1,22 +1,24 @@
 <template>
-    <div id="resumeContainer">
-        <b-card
-            tag="article"
-            class="mb-2"
-        >
-            <pdf id="pdfContainer" src="https://cors-anywhere.herokuapp.com/https://drive.google.com/uc?export=download&id=1ZHFUYW8MtLS_POEw1MkYAuB5KMesl8HK">
-                <template slot="loading">
-                    Loading 
-                    <font-awesome-icon icon="spinner" spin/>
-                </template>
-            </pdf>
-        </b-card>
-    </div>
+    <b-container style="paddingTop:10px">
+        <b-row align-v="center" align-h="center">
+            <b-card
+                tag="article"
+                class="mb-2"
+                id="card"
+            >
+                <pdf
+                    id="pdfContainer" 
+                    src="https://cors-anywhere.herokuapp.com/https://drive.google.com/uc?export=download&id=1QSAww2vBHkybbqR6NZKGr2VedW-mlefy"
+                >   
+                </pdf>
+            </b-card>
+        </b-row>
+    </b-container>
 </template>
 
 <script>
-import { scrypt } from 'crypto';
-import pdf from 'pdfvuer'
+import pdf from 'vue-pdf'
+
 
 export default {
     name: "Resume",
@@ -25,29 +27,22 @@ export default {
     },
     data() {
         return {
-            data: null
         }
-    }
+    },
 }
 </script>
 
 <style scoped>
 
-    #pdfContainer {
-        display: flex;
-        width:100%;
-        height: 100%;
-        justify-content: center;
-        align-items: center;
+    #card {
+        width: 80%;
     }
 
-    #resumeContainer {
-        display: flex;
-        flex-direction: column;
-        align-items: center; 
-        justify-content: center; 
-        margin-top:40px; 
-        width:100%;
+    #pdfContainer {
+        display: inline-block;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
     }
 
 </style>
