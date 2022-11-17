@@ -1,19 +1,11 @@
 <template>
-  <v-app>
+  <v-app class="myFont">
     <v-app-bar
       app
-      color="primary"
+      color="#000"
       dark
     >
       <div class="d-flex align-center">
-        <!-- <v-img
-          alt="JogaSoftware Logo"
-          class="shrink mr-2"
-          contain
-          src="./assets/logo.png"
-          transition="scale-transition"
-          width="40"
-        /> -->
         <b>JogaSoftware</b>
       </div>
     </v-app-bar>
@@ -21,6 +13,15 @@
     <v-main>
       <HomePage/>
     </v-main>
+
+    <v-footer padless>
+      <v-col
+        class="text-center"
+        cols="12"
+      >
+       <strong>©</strong> {{ new Date().getFullYear() }} — <strong>JogaSoftware</strong>
+      </v-col>
+    </v-footer>
   </v-app>
 </template>
 
