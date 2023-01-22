@@ -26,7 +26,7 @@ class Games extends React.Component {
 
     render() {
         return (
-            <Stack direction="column" alignItems='center'>
+            <Stack direction="column" alignItems='center' style={{background: "#f5f5f5"}}>
                 <h3>Hi! Welcome to my site. My name is Gabriel Sanchez and below is a collection of games I have made. Enjoy!</h3>
                 <Grid 
                     container 
@@ -44,9 +44,16 @@ class Games extends React.Component {
                                         onClick={() => {window.location.href = object.link;}}
                                     />
                                     <CardContent>
-                                    <Typography gutterBottom variant="h5" component="div">
-                                        {object.title}
-                                    </Typography>
+                                        <Typography 
+                                            gutterBottom 
+                                            variant="h5" 
+                                            component="div"
+                                            style={{
+                                                fontFamily: "helvetica"
+                                            }}
+                                        >
+                                            {object.title}
+                                        </Typography>
                                     </CardContent>
                                 </CardActionArea>
                             </Card>

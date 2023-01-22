@@ -1,68 +1,138 @@
 import React from "react";
 import AppBar from '@mui/material/AppBar';
 import Typography from '@mui/material/Typography';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
+import Toolbar from '@mui/material/Toolbar';
 import router from '../routes';
-import Stack from '@mui/material/Stack';
+import MenuIcon from '@mui/icons-material/Menu';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import Box from '@mui/material/Box';
+import IconButton from '@mui/material/IconButton';
+import Button from '@mui/material/Button';
 
 class JSAppBar extends React.Component {
 
-    static routeMap = {
-        0: "/",
-        1: "/notFound"
-    }
+    static pages = [
+        { title: "Games", href: "/" },
+    ]
 
     constructor(props) {
-        super(props);
+        super(props)
 
         this.state = {
-            tabIndex: 0
+            anchorElNav: null
         }
     }
 
-    handleChange(event, newValue){
+    handleOpenNavMenu = (event) => {
         this.setState({
-            tabIndex: newValue
-        }, () => {
-            router.navigate(JSAppBar.routeMap[newValue])
+            anchorElNav: event.currentTarget
+        })
+    };
+
+    handleCloseNavMenu = () => {
+        this.setState({
+            anchorElNav: null
         });
     };
+
+    handlePageClick = (page) => {
+        this.handleCloseNavMenu()
+        router.navigate(page.href)
+    }
 
     render() {
 
         const {
-            tabIndex
-        } = this.state;
+            anchorElNav
+        } = this.state
 
         return (
             <AppBar color="primary" position="static">
-                <Stack direction="column">
+                <Toolbar>
                     <Typography
                             variant="h6"
                             noWrap
+                            component="a"
                             href="/"
                             sx={{
-                                p: 1,
-                                fontFamily: 'sans-serif',
+                                mr: 2,
+                                display: { xs: 'none', md: 'flex' },
+                                fontFamily: 'monospace',
                                 fontWeight: 700,
+                                letterSpacing: '.2rem',
                                 color: 'inherit',
                                 textDecoration: 'none',
-                            }}
+                                }}
                     >
                     JoGa Software
                     </Typography>
-                    <Tabs 
-                        textColor="secondary"
-                        indicatorColor={"secondary"}
-                        fontFamily="sans-serif"
-                        value={tabIndex} 
-                        onChange={(event, newValue) => this.handleChange(event, newValue)}
+                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+                        <IconButton
+                        size="large"
+                        aria-label="account of current user"
+                        aria-controls="menu-appbar"
+                        aria-haspopup="true"
+                        onClick={this.handleOpenNavMenu}
+                        color="inherit"
+                        >
+                        <MenuIcon />
+                        </IconButton>
+                        <Menu
+                            id="menu-appbar"
+                            anchorEl={anchorElNav}
+                            anchorOrigin={{
+                                vertical: 'bottom',
+                                horizontal: 'left',
+                            }}
+                            keepMounted
+                            transformOrigin={{
+                                vertical: 'top',
+                                horizontal: 'left',
+                            }}
+                            open={Boolean(anchorElNav)}
+                            onClose={this.handleCloseNavMenu}
+                            sx={{
+                                display: { xs: 'block', md: 'none' },
+                            }}
+                        >
+                        {JSAppBar.pages.map((page, index) => (
+                            <MenuItem key={index} onClick={() => this.handlePageClick(page)}>
+                                <Typography textAlign="center">{page.title}</Typography>
+                            </MenuItem>
+                        ))}
+                        </Menu>
+                    </Box>
+                    <Typography
+                        variant="h5"
+                        noWrap
+                        component="a"
+                        href=""
+                        sx={{
+                        mr: 2,
+                        display: { xs: 'flex', md: 'none' },
+                        flexGrow: 1,
+                        fontFamily: 'monospace',
+                        fontWeight: 700,
+                        letterSpacing: '.3rem',
+                        color: 'inherit',
+                        textDecoration: 'none',
+                        }}
                     >
-                        <Tab sx={{ color: "white"}} label="Games" />
-                        {/* <Tab sx={{ color: "white"}} label="Not Found" /> */}
-                    </Tabs>
-                </Stack>
+                        JoGa Software
+                    </Typography>
+                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                        {JSAppBar.pages.map((page, index) => (
+                        <Button
+                            key={index}
+                            onClick={() => this.handlePageClick(page)}
+                            sx={{ my: 2, color: 'white', display: 'block' }}
+                        >
+                            {page.title}
+                        </Button>
+                        ))}
+                    </Box>
+                </Toolbar>
             </AppBar>
         );
     }
