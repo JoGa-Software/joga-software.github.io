@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/jogasoftware/static/css/main.073c9b0a.css",
+    "main.js": "/jogasoftware/static/js/main.3f33a11b.js",
+    "static/js/787.e37695b3.chunk.js": "/jogasoftware/static/js/787.e37695b3.chunk.js",
+    "static/media/twm.png": "/jogasoftware/static/media/twm.0e83b368540a27362583.png",
+    "static/media/2me.png": "/jogasoftware/static/media/2me.6570f527a3a34d9e8033.png",
+    "static/media/sod.png": "/jogasoftware/static/media/sod.4d31317aba904d1fc4d4.png",
+    "static/media/tot.png": "/jogasoftware/static/media/tot.572670fc275b51cf2b13.png",
+    "index.html": "/jogasoftware/index.html",
+    "main.073c9b0a.css.map": "/jogasoftware/static/css/main.073c9b0a.css.map",
+    "main.3f33a11b.js.map": "/jogasoftware/static/js/main.3f33a11b.js.map",
+    "787.e37695b3.chunk.js.map": "/jogasoftware/static/js/787.e37695b3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.3f33a11b.js"
+  ]
+}
