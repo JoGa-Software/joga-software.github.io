@@ -60,7 +60,7 @@ class JSAppBar extends React.Component {
                         onChange={(event, newValue) => this.handleChange(event, newValue)}
                     >
                         <Tab sx={{ color: "white"}} label="Games" />
-                        <Tab sx={{ color: "white"}} label="Not Found" />
+                        {/* <Tab sx={{ color: "white"}} label="Not Found" /> */}
                     </Tabs>
                 </Stack>
             </AppBar>
