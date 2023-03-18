@@ -16,6 +16,7 @@ class Games extends React.Component {
 
         this.state = {
             content: [
+                {title: "Simple Solitaire Classic", image: require("../assets/ssc.png"), link: "https://apps.apple.com/us/app/2-many-eggs/id6445898483"},
                 {title: "2 Many Eggs", image: require("../assets/2me.png"), link: "https://apps.apple.com/us/app/2-many-eggs/id1618833947"},
                 {title: "The Weather Machine", image: require("../assets/twm.png"), link: "https://jogasoftware07.itch.io/the-weather-machine"},
                 {title: "Seal of Darkness", image: require("../assets/sod.png"), link: "https://jogasoftware07.itch.io/seal-of-darkness"},
