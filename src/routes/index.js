@@ -12,6 +12,7 @@ const router = createBrowserRouter([
         errorElement: <NotFound />
     },
     {
+        index: true,
         path: '/sscprivacypolicy',
         element: <SSCPrivacyPolicy />,
         errorElement: <NotFound />
