@@ -1,11 +1,11 @@
 import React from "react";
-import { createBrowserRouter } from 'react-router-dom';
+import { createHashRouter } from 'react-router-dom';
 
 import Games from '../pages/Games';
 import NotFound from '../pages/not-found';
 import SSCPrivacyPolicy from '../pages/SSC_Privacy_Policy';
 
-const router = createBrowserRouter([
+const router = createHashRouter([
     {
         path: '/',
         element: <Games />,
